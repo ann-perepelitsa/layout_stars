@@ -7,10 +7,10 @@ body {
 /* --- Параметры из Figma --- */
 :root {
   /* Горизонтальный шаг между звёздами */
-  --h-gap: 4px; /* ← подставь точное значение из Figma */
+    --h-gap: 8px; /* ← подставь точное значение из Figma */
 
   /* Вертикальный шаг между рядами */
-  --v-gap: 4px; /* ← подставь точное значение из Figma */
+    --v-gap: 14px; /* ← подставь точное значение из Figma */
 }
 
 /* Ряд звёзд — без вертикальных margin между блоками */
@@ -25,23 +25,23 @@ body {
   padding-top: var(--v-gap);
 }
 
-/* Базовая звезда 16×16, фон — относительный путь к картинкам */
-.star {
-  width: 16px;
-  height: 16px;
-  background: url('./images/star.svg') no-repeat center / 16px 16px;
+/* Базовая звезда 13×12, фон — относительный путь к картинкам */
+.stars__star {
+  width: 13px;
+  height: 12px;
+  background: url('./images/star.svg') no-repeat center / 13px 12px;
 }
 
 /* Горизонтальный зазор без gap (используем соседство, можно и nth-child) */
-.star:not(:first-child) {
+.stars__star:not(:first-child) {
   margin-left: var(--h-gap);
 }
 
 /* Активируем первые N звёзд для модификаторов .stars--N */
-.stars--1 .star:nth-child(-n + 1),
-.stars--2 .star:nth-child(-n + 2),
-.stars--3 .star:nth-child(-n + 3),
-.stars--4 .star:nth-child(-n + 4),
-.stars--5 .star:nth-child(-n + 5) {
+.stars--1 .stars__star:nth-child(-n + 1),
+.stars--2 .stars__star:nth-child(-n + 2),
+.stars--3 .stars__star:nth-child(-n + 3),
+.stars--4 .stars__star:nth-child(-n + 4),
+.stars--5 .stars__star:nth-child(-n + 5) {
   background-image: url('./images/star-active.svg');
 }
