@@ -1,1 +1,47 @@
-/* add styles here */
+/* Сброс браузерных отступов */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Параметры из Figma --- */
+:root {
+  /* Горизонтальный шаг между звёздами */
+  --h-gap: 4px; /* ← подставь точное значение из Figma */
+
+  /* Вертикальный шаг между рядами */
+  --v-gap: 4px; /* ← подставь точное значение из Figma */
+}
+
+/* Ряд звёзд — без вертикальных margin между блоками */
+.stars {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+/* Вертикальный зазор между строками через padding (с nth-child) */
+.stars:nth-child(n + 2) {
+  padding-top: var(--v-gap);
+}
+
+/* Базовая звезда 16×16, фон — относительный путь к картинкам */
+.star {
+  width: 16px;
+  height: 16px;
+  background: url('./images/star.svg') no-repeat center / 16px 16px;
+}
+
+/* Горизонтальный зазор без gap (используем соседство, можно и nth-child) */
+.star:not(:first-child) {
+  margin-left: var(--h-gap);
+}
+
+/* Активируем первые N звёзд для модификаторов .stars--N */
+.stars--1 .star:nth-child(-n + 1),
+.stars--2 .star:nth-child(-n + 2),
+.stars--3 .star:nth-child(-n + 3),
+.stars--4 .star:nth-child(-n + 4),
+.stars--5 .star:nth-child(-n + 5) {
+  background-image: url('./images/star-active.svg');
+}
