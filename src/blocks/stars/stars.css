@@ -16,7 +16,7 @@
   height: 12px;
   background-image: url('../../images/star.svg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 0 0;
   background-size: 13px 12px;
 }
 
