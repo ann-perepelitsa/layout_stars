@@ -14,7 +14,10 @@
 .stars__star {
   width: 13px;
   height: 12px;
-  background: url('../../images/star.svg') no-repeat center / 13px 12px;
+  background-image: url('../../images/star.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 13px 12px;
 }
 
 /* Горизонтальный зазор без gap (используем соседство, можно и nth-child) */
